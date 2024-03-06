@@ -1,0 +1,35 @@
+.user{
+    margin-left: 35%;
+    margin-top: 10%;
+    width: 30%;
+    height: 200px;
+
+}
+.user h1{
+    margin-left: 90px;
+}
+.user button{
+    height: 40px;
+    width: 300px;
+}
+.btn2{
+    margin-top: 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.btn1{
+    color: black;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.btn2:hover{
+   color: white;
+   background-color: blue;
+}
+.btn1:hover{
+    color: white;
+    background-color: blue;
+ }
