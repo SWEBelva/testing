@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="title">Registration</div>
+        <form action="/auth/index" method="POST">
+       <div class="user-detail">
+      <div class="input-box">
+       <span class="detail"><label for="Full name">title</label></span>
+       <input type="text" placeholder="Enter your project title" id=" title" name="title" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Email">Decription</label></span>
+      <textarea  type="text"   name="Description" id="decription" cols="50" rows="20"   required></textarea>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Phone Number">funding_goal</label></span>
+       <input type="number" placeholder="Enter your Funding goals" id="funding_goal" name="funding_goal" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Residence Address"> category_name</label></span>
+       <input type="text" placeholder="Enter your project category"  id="category_name" name="category_name"  required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="country">documentation</label></span>
+       <input type="file" placeholder="Enter the documentation" id="documentation" name="documentation" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><labe for="Source of fund">current_Fund</labe></span>
+       <input type="number" placeholder="Enter the Current fund" id="current_fund" name="curent_fund" required>
+    </div>
+  
+      <div class="button">
+    <input type="submit" value="Register">
+       </div>
+        </form>
+        {{#if message}}
+        <h4 class=" alert alert-danger mt-4"  > {{message}}  </h4>
+        {{/if}}
+        </div>
+</body>
+</html>

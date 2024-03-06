@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="await.css">
+</head>
+<body>
+    <div class="container1">
+        <div class="section">
+          <h2><img></h2>
+            <ul class="side">
+                <li><a href="Home">Home</a></li>
+                <li><a href="Services">Services</a></li>
+                <li><a href="others">Others</a></li>
+                </ul>
+                <ul class="side">
+                <a href="/type" ><button type="submit" value="SignUp" class="btn1">SignUP</button></li></a>
+           <li>
+           <li><a  class="bel"   href="">LogIn</a></li>
+            </ul>
+
+        </div>
+        </div>
+    </div>
+    <div class="container1">
+      <nav>
+        <ul>
+          <li><a href="#" class="logo">
+              <img src="image/kit.jpg" alt="" />
+              <span class="nav-item">Kit-Assur</span>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Users Awaiting verification</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">User Detail</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-wallet"></i>
+              <span class="nav-item">Veridication workflow</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">User Activity Monitory</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Verification Completion Rate</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a></li>
+          <li><a href="">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a></li>
+          <li><a href="" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a></li>
+        </ul>
+      </nav>
+ <h2 >List of Pending Users</h2>
+      <section class="main">
+        <div class="list">
+          <table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Country</th>
+    <th>Phone_number</th>
+    <th>residence_address</th>
+    <th>Source_of_fund</th>
+  <th>CNI_number</th>
+    <th>password</th>  
+    <th>Createdat</th>
+    <th>year_of_birth</th>
+  </tr>
+  <tr>
+    <td id="col">Alfreds Futterkiste</td>
+    <td id="col1">Maria Anders</td>
+    <td id="col2">Germany</td>
+    <td id="col3">Alfreds Futterkiste</td>
+    <td id="col4">Maria Anders</td>
+    <td id="col5" >Germany</td>
+    <td id="col6">Alfreds Futterkiste</td>
+    <td id="col7">Maria Anders</td>
+    <td id="col8">Germany</td>
+    <td id="col9">Germany</td>
+    
+  </tr>
+  <tr>
+    <td id="col10">Alfreds Futterkiste</td>
+    <td id="col11">Maria Anders</td>
+    <td id="col12">Germany</td>
+    <td id="col13">Alfreds Futterkiste</td>
+    <td id="col14">Maria Anders</td>
+    <td id="col15" >Germany</td>
+    <td id="col16">Alfreds Futterkiste</td>
+    <td id="col17">Maria Anders</td>
+    <td id="col18">Germany</td>
+    <td id="col19">Germany</td>
+    
+  </tr>
+</table>
+        </div>
+      </section>
+    </div>
+ <script>
+      const col =document.getElementById('col')
+      fetch('http://localhost:3000/mess').then(response =>
+      response.json()).then(data =>{ console.log(data.password);
+      col.textContent = data[0].username
+      col1.textContent = data[0].email 
+      col2.textContent = data[0].country
+      col3.textContent = data[0].Phone_number
+      col4.textContent = data[0].residence_address
+      col5.textContent = data[0].Source_of_fund 
+      col6.textContent = data[0].CNI_number
+      col7.textContent = data[0].password
+      col8.textContent = data[0].created_at
+      col9.textContent = data[0].year_of_birth
+      col10.textContent = data[1].username
+      col11.textContent = data[1].email 
+      col12.textContent = data[1].country
+      col13.textContent = data[1].Phone_number
+      col14.textContent = data[1].residence_address
+      col15.textContent = data[1].Source_of_fund 
+      col16.textContent = data[1].CNI_number
+      col17.textContent = data[1].password
+      col18.textContent = data[1].created_at
+      col19.textContent = data[1].year_of_birth
+      })
+      
+    </script>
+</body>
+</html>

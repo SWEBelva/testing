@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pending Accounts</h1>
+    <ul id="pendingAccounts"></ul>
+
+    <script>
+        // Function to fetch and display pending accounts
+        function fetchPendingAccounts() {
+            fetch('/pending_accounts')
+                .then(response => response.json())
+                .then(accounts => {
+                    const pendingAccountsList = document.getElementById('pendingAccounts');
+                    pendingAccountsList.innerHTML = '';
+
+                    accounts.forEach(account => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${account.username} - ${account.email} - ${account.password} `;
+                        
+                        const validateButton = document.createElement('button');
+                        validateButton.textContent = 'Validate';
+                        validateButton.onclick = () => validateAccount(account.id, 'validate');
+                        listItem.appendChild(validateButton);
+                        
+                        const rejectButton = document.createElement('button');
+                        rejectButton.textContent = 'Reject';
+                        rejectButton.onclick = () => validateAccount(account.id, 'reject');
+                        listItem.appendChild(rejectButton);
+
+                        pendingAccountsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching pending accounts:', error));
+        }
+
+        // Function to validate or reject an account
+        function validateAccount(accountId, action) {
+            fetch(`/validate_account/${accountId}/${action}`, { method: 'POST' })
+                .then(() => {
+                    fetchPendingAccounts();
+                })
+                .catch(error => console.error(`Error ${action}ing account:`, error));
+        }
+
+        // Fetch and display pending accounts on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchPendingAccounts();
+        });
+    </script>
+</body>
+</html>

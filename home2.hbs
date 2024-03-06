@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style4.css">
+</head>
+<body>
+    <div class="container">
+    <div class="title">Registration</div>
+    <form action="/auth/index" method="POST">
+       <div class="user-detail">
+      <div class="input-box">
+       <span class="detail"><label for="Full name">name</label></span>
+       <input type="text" placeholder="Enter your name" id=" name" name="name" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Email">Email</label></span>
+       <input type="email" placeholder="Enter your email" id="Email" name="Email" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Phone Number">Phone_number</label></span>
+       <input type="number" placeholder="Enter your phone number" id="Phone_number" name="Phone_number" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="Residence Address">residence_address</label></span>
+       <input type="text" placeholder="Enter your address"  id="residence_address" name="residence_address"  required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="country">country</label></span>
+       <input type="text" placeholder="Enter your country" id="country" name="country" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><labe for="Source of fund">Cv</labe></span>
+       <input type="file" placeholder="Enter your source of fund" id="CV" name="CV" required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="CNI_number">CNI_number</label></span>
+       <input type="number" placeholder="Enter your CNI number"  id="CNI_number" name="CNI_number"  required>
+    </div>
+    <div class="input-box">
+       <span class="detail"><label for="year_of_birth">year_of_birth</label></span>
+       <input type="date" placeholder="Enter your year of birth" id="year" name="year" required>
+    </div>
+     <div class="input-box">
+       <span class="detail"><label for="Password">Password</label></span>
+       <input type="number" placeholder="Enter your password" id="password" name="password" required>
+    </div>
+     <div class="input-box">
+       <span class="detail">Confirmpassword</span>
+       <input type="number" placeholder="confirm password"  id="passwordconfirm" name="passwordconfirm"  required>
+    </div>
+     <div class="input-box">
+       <span class="detail">Certificates</span>
+       <input type="file" placeholder="Upload your certify cirtificate"  id="Certificate" name="Certificate"  required>
+    </div>
+        <div class="gender">Gender</div>
+          <div class="gender-details">
+        <div class="nmae">
+            <span class="male"><label for="male">male</label></span>
+        <input type="radio" value="male" id="male" name="male">
+        </div>
+        <div class="nmae">
+            <span class="male"><label for="female">female</label></span>
+        <input type="radio" value="Female" id="female" name="female">
+        </div>
+    </div>
+     </div>
+      <div class="button">
+    <input type="submit" value="Register">
+       </div>
+        </form>
+         {{#if message}}
+        <h4 class=" alert alert-danger mt-4"  > {{message}}  </h4>
+        {{/if}}
+        </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/team.css">
+</head>
+<body>
+    <h1>Pending Accounts</h1>
+    <ul id="pendingAccounts">
+        {{#each pendingAccounts}}
+        <li>
+            {{this.name}} - {{this.email}} - {{this.password}}-{{this.Phone_number}}-{{this.residence_address}}-{{this.country}}-{{this.Source of Source_of_fund}}-{{this.CNI_number}}-{{this.year_of_birth}}
+            <form action="">
+                <button type="submit" name="action" value="validate">Validate</button>
+                <button type="submit" name="action" value="reject">Reject</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+</body>
+</html>
